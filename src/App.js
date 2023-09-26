@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { TranslucentMenu } from "./components/TranslucentMenu/TranslucentMenu";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
         <Route path="/flex" element={<Flex />} />
+        <Route path="/translucent" element={<TranslucentMenu />} ></Route>
       </Routes>
     </Router>
     </div>
