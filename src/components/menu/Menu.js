@@ -24,9 +24,9 @@ function Menu() {
         <div className={`dropdown-content ${isMenuActive ? 'active' : ''}`}>
           <ul>
             <li><a href="#seccion1" >Flexbox</a></li>
-            <li><a href="#seccion2">Contact</a></li>
-            <li><a href="#seccion3">Products</a></li>
-            <li><a href="#seccion4">Seccion 4</a></li>
+            <li><a href="#seccion2">Services</a></li>
+            <li><a href="#seccion3">Contacts</a></li>
+            <li><a href="#seccion4">Products</a></li>
             <li><a href="#seccion5">Seccion 5</a></li>
           </ul>
         </div>

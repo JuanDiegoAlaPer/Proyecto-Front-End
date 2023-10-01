@@ -4,15 +4,15 @@
   
   button.slick-arrow.slick-next::before{
     font-size: 55px;
-    position: fixed;
-    right: 200px;
+    position: absolute;
+    right: 0;
     color: black;
   }
 
   button.slick-arrow.slick-prev::before{
     font-size: 55px;
-    position: fixed;
-    left: 200px;
+    position: absolute;
+    left: 0;
     color: black;
   }
 

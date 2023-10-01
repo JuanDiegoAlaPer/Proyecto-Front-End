@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Home.scss";
 import Cubo from "../cubo/Cubo";
 import Menu from "../menu/Menu";
+import Service from "../Services/Service";
 import Flex from "../Flex/Flex";
 import Contact from "../Contacts/Contact";
 import Products from "../Products/Products";
@@ -17,28 +18,11 @@ import {
   Modal,
 } from "@mui/material";
 
-import servicios from "../../assets/images/servicios.png";
-import pweb from "../../assets/images/descarga.png";
-import nube from "../../assets/images/nube.jpg";
-import recuperacion from "../../assets/images/recuperacion.jpg";
-import seguridad from "../../assets/images/seguridad.jpg";
-import soporte from "../../assets/images/soporte.jpg";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const Home = () => {
-  const [showOptionsCard, setShowOptionsCard] = useState(false);
-
-  const handleOpenOptionsCard = () => {
-    setShowOptionsCard(true);
-  };
-
-  const handleCloseOptionsCard = () => {
-    setShowOptionsCard(false);
-  };
-
   const [showFloatingMenu, setShowFloatingMenu] = useState(false);
 
   const [currentSection, setCurrentSection] = useState("");
@@ -105,133 +89,14 @@ export const Home = () => {
           <h1>Flexbox</h1>
         </div>
         <div className="seccion2" id="seccion2">
-          <h1>Servicios</h1>
-          <div className="cards-container">
-            <Card sx={{ maxWidth: 345, background: "#fff" }} className="card">
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={servicios}
-                  alt="Servicios informáticos"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Servicios infórmaticos
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Ofrecemos soluciones informáticas integrales para satisfacer
-                    todas tus necesidades tecnológicas. Desde el soporte técnico
-                    y la reparación de hardware hasta el desarrollo de software
-                    a medida.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button
-                  size="small"
-                  color="primary"
-                  onClick={handleOpenOptionsCard}
-                >
-                  MÁS INFO
-                </Button>
-              </CardActions>
-            </Card>
-            <Card sx={{ maxWidth: 345, background: "#fff" }} className="card">
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={pweb}
-                  alt="Servicios informáticos"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Programación web
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Nuestro servicio de programación web ofrece soluciones a
-                    medida para tus necesidades digitales. Diseñamos y
-                    desarrollamos sitios web profesionales, aplicaciones web y
-                    sistemas en línea.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button
-                  size="small"
-                  color="primary"
-                >
-                  MÁS INFO
-                </Button>
-              </CardActions>
-            </Card>
-            {showOptionsCard && (
-              <Card sx={{ maxWidth: 345, background: "#fff" }} className="card">
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={soporte}
-                  alt="Servicios informáticos"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Soporte técnico
-                  </Typography>
-                </CardContent>
-                 <CardMedia
-                  component="img"
-                  height="140"
-                  image={seguridad}
-                  alt="Servicios informáticos"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                  Seguridad y redes
-                  </Typography>
-                </CardContent>
-                 <CardMedia
-                  component="img"
-                  height="140"
-                  image={nube}
-                  alt="Servicios informáticos"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                  Servicio de nube
-                  </Typography>
-                </CardContent>
-                 <CardMedia
-                  component="img"
-                  height="140"
-                  image={recuperacion}
-                  alt="Servicios informáticos"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Recuperación de datos
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button
-                  size="small"
-                  color="primary"
-                  onClick={handleCloseOptionsCard}
-                >
-                  CERRAR
-                </Button>
-              </CardActions>
-            </Card>
-            )}
-          </div>
+          <h1>Services</h1>
+          <Service />
         </div>
         <div className="seccion3" id="seccion3">
-          <h1>Products</h1>
+          <h1>Contacts</h1>
         </div>
         <div className="seccion4" id="seccion4">
-          <h1>Sección 4</h1>
+          <h1>Products</h1>
         </div>
         <div className="seccion5" id="seccion5">
           <h1>Sección 5</h1>
@@ -263,7 +128,7 @@ export const Home = () => {
               height="1em"
               viewBox="0 0 512 512"
             >
-              <path d="M96 0C60.7 0 32 28.7 32 64V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H96zM208 288h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H144c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM512 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V80zM496 192c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm16 144c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V336z" />
+              <path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z" />
             </svg>
           </a>
         </div>
@@ -277,7 +142,7 @@ export const Home = () => {
               height="1em"
               viewBox="0 0 512 512"
             >
-              <path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z" />
+              <path d="M96 0C60.7 0 32 28.7 32 64V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H96zM208 288h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H144c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM512 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V80zM496 192c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm16 144c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V336z" />
             </svg>
           </a>
         </div>
@@ -289,9 +154,9 @@ export const Home = () => {
               className="svg-icon"
               xmlns="http://www.w3.org/2000/svg"
               height="1em"
-              viewBox="0 0 384 512"
+              viewBox="0 0 448 512"
             >
-              <path d="M189 77.6c7.5-16 .7-35.1-15.3-42.6s-35.1-.7-42.6 15.3L3 322.4c-4.7 9.9-3.9 21.5 1.9 30.8S21 368 32 368H256v80c0 17.7 14.3 32 32 32s32-14.3 32-32V368h32c17.7 0 32-14.3 32-32s-14.3-32-32-32H320V160c0-17.7-14.3-32-32-32s-32 14.3-32 32V304H82.4L189 77.6z" />
+              <path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" />
             </svg>
           </a>
         </div>
