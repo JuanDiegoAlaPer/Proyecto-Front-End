@@ -17,6 +17,7 @@ import {
   CardActions,
   Button,
   Modal,
+  Box,
 } from "@mui/material";
 
 import Slider from "react-slick";
@@ -31,6 +32,29 @@ export const Home = () => {
   const [showFloatingMenu, setShowFloatingMenu] = useState(false);
 
   const [currentSection, setCurrentSection] = useState("");
+
+  const [open, setOpen] = useState(false);
+  const [selectedNoticia, setSelectedNoticia] = useState(null);
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400, // Ajusta el ancho como desees
+    backgroundColor: "white",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const handleOpen = (noticia) => {
+    setSelectedNoticia(noticia);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -129,11 +153,11 @@ export const Home = () => {
       <div className="content">
         <div className="seccion1" id="seccion1">
           <h1>Flexbox</h1>
-          <Slide noticias={noticias}/>
+          <Slide noticias={noticias} handleOpen ={handleOpen} />
         </div>
         <div className="seccion2" id="seccion2">
           <h1>Services</h1>
-          <Service />
+          {/* <Service /> */}
         </div>
         <div className="seccion3" id="seccion3">
           <h1>Contacts</h1>
@@ -218,6 +242,36 @@ export const Home = () => {
           </a>
         </div>
       </div>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        className="modal-style"
+      >
+        <Box sx={style} className="modal-content">
+          {selectedNoticia && (
+            <>
+              <img
+                src={selectedNoticia.Image}
+                alt={selectedNoticia.noticiaTitle}
+                className="modal-image"
+                style={{ width: "300px", height: "300px" }}
+              />
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                {selectedNoticia.noticiaTitle}
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {selectedNoticia.noticiaSubtitle}
+              </Typography>
+              <Typography variant="subtitle1" sx={{ mt: 2 }}>
+                {selectedNoticia.noticiaDescription}
+              </Typography>
+            </>
+          )}
+        </Box>
+      </Modal>
     </div>
   );
 };

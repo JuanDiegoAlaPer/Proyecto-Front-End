@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './Slide.scss'
 import { Button } from '@mui/material';
 
-export const Slide = ({ noticias }) => {
+export const Slide = ({ noticias, handleOpen }) => {
     const sliderSettings = {
         dots: true,
         infinite: true,
@@ -27,7 +27,7 @@ export const Slide = ({ noticias }) => {
                 )}
                 <h2>{noticia.noticiaTitle}</h2>
                 <p>{noticia.noticiaSubtitle}</p>
-                <Button>Ver más</Button>
+                <Button onClick={() => handleOpen(noticia)}>Ver más</Button>
               </div>
             ))}
           </Slider>
