@@ -3,6 +3,7 @@ import "./Home.scss";
 import Cubo from "../cubo/Cubo";
 import Menu from "../menu/Menu";
 import Service from "../Services/Service";
+import ServicesList from "../ServicesList/ServicesList"
 import Flex from "../Flex/Flex";
 import Contact from "../Contacts/Contact";
 import Products from "../Products/Products";
@@ -21,6 +22,10 @@ import {
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SliderComponent from "../SliderComponent/SliderComponent";
+import Slide from "../Slide/Slide";
+
+import { Noticias } from "../../assets/index";
 
 export const Home = () => {
   const [showFloatingMenu, setShowFloatingMenu] = useState(false);
@@ -80,6 +85,43 @@ export const Home = () => {
     };
   }, []);
 
+  const noticias = [
+    {
+      noticiaId: "1",
+      noticiaTitle: "Conflicto Israel",
+      noticiaSubtitle: "El riesgo de que el conflicto entre Hamás e Israel desate una guerra regional",
+      noticiaDescription:
+        "Hasta ahora, no hay señales de que Hezbolá lance una ofensiva propia, aunque ya han ocurrido enfrentamientos en la frontera entre Israel y el Líbano. En lo que respecta a Irán, su líder negó los rumores que relacionan a su país con el ataque de Hamás. Alrededor, los países árabes vecinos quieren mejorar sus relaciones con Israel y servir de mediadores en el conflicto.",
+      Image: Noticias.noticia1,
+      created_at: "11-10-2023",
+    },
+    {
+      noticiaId: "2",
+      noticiaTitle: "Amazonía",
+      noticiaSubtitle: "Los vacíos de los proyectos de bonos de carbono en la Amazonia colombiana",
+      noticiaDescription: "Dos informes, uno del Instituto Sinchi, y otro de la fundación Gaia, muestran los retos que están causando estos proyectos en la región amazónica. La ausencia de regulación, uno de los grandes problemas. En algunos casos, señalan, están dividiendo a las comunidades.",
+      Image: Noticias.noticia2,
+      created_at: "11-10-2023",
+    },
+    {
+      noticiaId: "3",
+      noticiaTitle: "Karol G anuncia fechas de conciertos en Colombia",
+      noticiaSubtitle: "Karol G anuncia fechas de conciertos en Medellín, Bogotá y resto de Latinoamérica para 2023 y 2024",
+      noticiaDescription:
+        "Los rumores de conciertos de Karol G en Colombia han llegado a su fin y ahora son eventos muy esperados por sus seguidores. Las declaraciones del exalcalde de Medellín, Daniel Quintero, y el anuncio de la alcaldesa de Bogotá, Claudia López, han anticipado el anuncio oficial. Aunque se especulaba sobre posibles conciertos en su país de origen mientras Karol G realizaba su exitosa gira 'Mañana será bonito' en Estados Unidos, finalmente se están haciendo realidad en Colombia.",
+      Image: Noticias.noticia3,
+      created_at: "05-10-2023",
+    },
+    {
+      noticiaId: "4",
+      noticiaTitle: "Esta es la receta para preparar “pancakes” de calabaza",
+      noticiaSubtitle: "Una receta deliciosa, con mucho sabor y muy esponjosa. ¡Deliciosa!",
+      noticiaDescription: "Puedes disfrutar esta preparación en un desayuno o almuerzo ligero. Los pancakes se llamaban de diversas maneras antes del siglo XIX en Estados Unidos, como johnnycakes, cakes de alforfón, journey cakes, flapjacks, hoe cakes y griddle cakes, y se hacían principalmente con trigo sarraceno o harina de maíz.",
+      Image: Noticias.noticia4,
+      created_at: "09-10-2023",
+    }
+  ];
+
   return (
     <div className="Home">
       <Cubo></Cubo>
@@ -87,6 +129,7 @@ export const Home = () => {
       <div className="content">
         <div className="seccion1" id="seccion1">
           <h1>Flexbox</h1>
+          <Slide noticias={noticias}/>
         </div>
         <div className="seccion2" id="seccion2">
           <h1>Services</h1>

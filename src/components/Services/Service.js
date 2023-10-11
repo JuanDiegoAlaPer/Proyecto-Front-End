@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import hardware from "../../assets/images/hardware.jpg";
-import programacion from "../../assets/images/programación.jpg";
-import reparacion from "../../assets/images/reparaciones.jpg";
-import update from "../../assets/images/hardupdate.jpg";
-import redes from "../../assets/images/redes.jpg";
-import appweb from "../../assets/images/appweb.jpg";
-import softemp from "../../assets/images/softemp.jpg";
-import consulta from "../../assets/images/consulta.jpg";
-import seguridad from "../../assets/images/seguridad.jpg";
+/* import service4 from "../../assets/images/services/appweb.jpg";
+import category3 from "../../assets/images/services/consulta.jpg";
+import service2 from "../../assets/images/services/hardupdate.jpg";
+import category1 from "../../assets/images/services/hardware.jpg";
+import category2 from "../../assets/images/services/programación.jpg";
+import service3 from "../../assets/images/services/redes.jpg";
+import service1 from "../../assets/images/services/reparaciones.jpg";
+import category4 from "../../assets/images/services/seguridad.jpg";
+import service5 from "../../assets/images/services/softemp.jpg"; */
+
+import { ServicesList } from "../ServicesList/ServicesList";
+
+import { Images } from "../../assets/index";
 
 import {
   Card,
@@ -41,7 +45,7 @@ export const Service = () => {
       categoryName: "Mantenimiento",
       categoryDescription:
         " Ofrecemos soluciones informáticas integrales para satisfacer todas tus necesidades tecnológicas. Desde el soporte técnico y la reparación de hardware hasta el desarrollo de software a medida.",
-      Image: hardware,
+      Image: Images.category1,
       categoryActive: true,
     },
     {
@@ -49,21 +53,21 @@ export const Service = () => {
       categoryName: "Desarrollo",
       categoryDescription:
         "Nuestro servicio de programación web ofrece soluciones a medida para tus necesidades digitales.Diseñamos y desarrollamos sitios web profesionales, aplicaciones web y sistemas en línea.",
-      Image: programacion,
+      Image: Images.category2,
       categoryActive: true,
     },
     {
       categoryId: "3",
       categoryName: "Consultoría",
       categoryDescription: "Nuestros consultores altamente calificados trabajan contigo para identificar desafíos, optimizar procesos y maximizar la eficiencia de tus sistemas y recursos informáticos. Ayudandote a tomar decisiones informadas y estratégicas que impulsen el éxito de tu empresa en la era digital. ",
-      Image: consulta,
+      Image: Images.category3,
       categoryActive: true,
     },
     {
       categoryId: "4",
       categoryName: "Seguridad",
       categoryDescription: "Nuestro servicio de seguridad informática está diseñado para proteger tu empresa o negocio contra las amenazas cibernéticas en constante evolución. Contamos con un equipo de expertos en seguridad que implementa estrategias proactivas y soluciones avanzadas para salvaguardar tus datos y sistemas críticos.",
-      Image: seguridad,
+      Image: Images.category4,
       categoryActive: true,
     },
     {
@@ -77,48 +81,48 @@ export const Service = () => {
 
   const services = [
     {
-      serviceId: "1",
+      _Id: "1",
       serviceName: "Reparación de hardware",
       categoryId: "1",
       serviceDescription:
         "Servicio de reparación de componentes de hardware dañados o defectuosos en computadoras y dispositivos.",
-      Image: reparacion,
+      Image: Images.service1,
       serviceActive: true,
     },
     {
-      serviceId: "2",
+      _Id: "2",
       serviceName: "Actualización de hardware",
       categoryId: "1",
       serviceDescription:
         "Servicio para mejorar el rendimiento de una computadora mediante la instalación de componentes de hardware más nuevos y potentes.",
-      Image: update,
+      Image: Images.service2,
       serviceActive: true,
     },
     {
-      serviceId: "3",
+      _Id: "3",
       serviceName: "Instalación de redes",
       categoryId: "1",
       serviceDescription:
         "Servicio que incluye la instalación y configuración de redes de computadoras, incluyendo routers y switches.",
-      Image: redes,
+      Image: Images.service3,
       serviceActive: true,
     },
     {
-      serviceId: "4",
+      _Id: "4",
       serviceName: "Desarrollo de Aplicaciones Web",
       categoryId: "2",
       serviceDescription:
         " Creación de aplicaciones web personalizadas para empresas y organizaciones.",
-      Image: appweb,
+      Image: Images.service4,
       serviceActive: true,
     },
     {
-      serviceId: "5",
+      _Id: "5",
       serviceName: "Desarrollo de Software Empresarial",
       categoryId: "2",
       serviceDescription:
         "Creación de software personalizado para empresas que automatiza procesos y mejora la eficiencia.",
-      Image: softemp,
+      Image: Images.service5,
       serviceActive: true,
     },
   ];
@@ -128,11 +132,15 @@ export const Service = () => {
   );
 
   return (
-    <div className="cards-container">
+    <div className="services-page">
+      <ServicesList servicesParam={services}></ServicesList>
+    </div>
+
+    /* <div className="cards-container">
       {categories.map((category) => {
         if (category.categoryActive) {
           return (
-            <Card sx={{ maxWidth: 345, background: "#fff" }} className="card">
+            <Card key={category.categoryId} sx={{ maxWidth: 345, background: "#fff" }} className="card">
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -166,7 +174,7 @@ export const Service = () => {
         {selectedCategoryServices.map((service) => {
           if (service.serviceActive) {
             return (
-              <Card sx={{ maxWidth: 345, background: "#fff" }} className="card">
+              <Card key={service._Id} sx={{ maxWidth: 345, background: "#fff" }} className="card">
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -183,21 +191,12 @@ export const Service = () => {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
-                {/* <CardActions>
-                  <Button
-                    size="small"
-                    color="primary"
-                    onClick={handleCloseServices}
-                  >
-                    Close
-                  </Button>
-                </CardActions> */}
               </Card>
             );
           }
         })}
       </div>
-    </div>
+    </div> */
   );
 };
 

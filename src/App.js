@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
+import "./index.scss";
 import Cubo from "./components/cubo/Cubo";
 import Menu from "./components/menu/Menu";
 import Flex from "./components/Flex/Flex";
@@ -12,6 +13,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { TranslucentMenu } from "./components/TranslucentMenu/TranslucentMenu";
+import ServicesList from "./components/ServicesList/ServicesList";
 
 function App() {
   return (
