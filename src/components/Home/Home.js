@@ -3,7 +3,7 @@ import "./Home.scss";
 import Cubo from "../cubo/Cubo";
 import Menu from "../menu/Menu";
 import Service from "../Services/Service";
-import ServicesList from "../ServicesList/ServicesList"
+import ServicesList from "../ServicesList/ServicesList";
 import Flex from "../Flex/Flex";
 import Contact from "../Contacts/Contact";
 import Products from "../Products/Products";
@@ -18,6 +18,7 @@ import {
   Button,
   Modal,
   Box,
+  Fab
 } from "@mui/material";
 
 import Slider from "react-slick";
@@ -27,6 +28,11 @@ import SliderComponent from "../SliderComponent/SliderComponent";
 import Slide from "../Slide/Slide";
 
 import { Noticias } from "../../assets/index";
+
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { FavoriteList } from "../FavoriteList/FavoriteList";
+import { ShoppingCartList } from "../ShoppingCartList/ShoppingCartList";
 
 export const Home = () => {
   const [showFloatingMenu, setShowFloatingMenu] = useState(false);
@@ -45,6 +51,18 @@ export const Home = () => {
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
+  };
+
+  const [favoriteList, setFavoriteList] = useState([]);
+  const addToFavoriteList = (object) => {
+    setFavoriteList((prevFavoriteList) => [...prevFavoriteList, object]);
+    console.log(favoriteList); 
+  };
+
+  const [shoppingCartList, setshoppingCartList] = useState([]);
+  const addToShoppingCartList = (object) => {
+    setshoppingCartList((prevshoppingCartList) => [...prevshoppingCartList, object]);
+    console.log(shoppingCartList); 
   };
 
   const handleOpen = (noticia) => {
@@ -113,7 +131,8 @@ export const Home = () => {
     {
       noticiaId: "1",
       noticiaTitle: "Conflicto Israel",
-      noticiaSubtitle: "El riesgo de que el conflicto entre Hamás e Israel desate una guerra regional",
+      noticiaSubtitle:
+        "El riesgo de que el conflicto entre Hamás e Israel desate una guerra regional",
       noticiaDescription:
         "Hasta ahora, no hay señales de que Hezbolá lance una ofensiva propia, aunque ya han ocurrido enfrentamientos en la frontera entre Israel y el Líbano. En lo que respecta a Irán, su líder negó los rumores que relacionan a su país con el ataque de Hamás. Alrededor, los países árabes vecinos quieren mejorar sus relaciones con Israel y servir de mediadores en el conflicto.",
       Image: Noticias.noticia1,
@@ -122,15 +141,18 @@ export const Home = () => {
     {
       noticiaId: "2",
       noticiaTitle: "Amazonía",
-      noticiaSubtitle: "Los vacíos de los proyectos de bonos de carbono en la Amazonia colombiana",
-      noticiaDescription: "Dos informes, uno del Instituto Sinchi, y otro de la fundación Gaia, muestran los retos que están causando estos proyectos en la región amazónica. La ausencia de regulación, uno de los grandes problemas. En algunos casos, señalan, están dividiendo a las comunidades.",
+      noticiaSubtitle:
+        "Los vacíos de los proyectos de bonos de carbono en la Amazonia colombiana",
+      noticiaDescription:
+        "Dos informes, uno del Instituto Sinchi, y otro de la fundación Gaia, muestran los retos que están causando estos proyectos en la región amazónica. La ausencia de regulación, uno de los grandes problemas. En algunos casos, señalan, están dividiendo a las comunidades.",
       Image: Noticias.noticia2,
       created_at: "11-10-2023",
     },
     {
       noticiaId: "3",
       noticiaTitle: "Karol G anuncia fechas de conciertos en Colombia",
-      noticiaSubtitle: "Karol G anuncia fechas de conciertos en Medellín, Bogotá y resto de Latinoamérica para 2023 y 2024",
+      noticiaSubtitle:
+        "Karol G anuncia fechas de conciertos en Medellín, Bogotá y resto de Latinoamérica para 2023 y 2024",
       noticiaDescription:
         "Los rumores de conciertos de Karol G en Colombia han llegado a su fin y ahora son eventos muy esperados por sus seguidores. Las declaraciones del exalcalde de Medellín, Daniel Quintero, y el anuncio de la alcaldesa de Bogotá, Claudia López, han anticipado el anuncio oficial. Aunque se especulaba sobre posibles conciertos en su país de origen mientras Karol G realizaba su exitosa gira 'Mañana será bonito' en Estados Unidos, finalmente se están haciendo realidad en Colombia.",
       Image: Noticias.noticia3,
@@ -139,11 +161,13 @@ export const Home = () => {
     {
       noticiaId: "4",
       noticiaTitle: "Esta es la receta para preparar “pancakes” de calabaza",
-      noticiaSubtitle: "Una receta deliciosa, con mucho sabor y muy esponjosa. ¡Deliciosa!",
-      noticiaDescription: "Puedes disfrutar esta preparación en un desayuno o almuerzo ligero. Los pancakes se llamaban de diversas maneras antes del siglo XIX en Estados Unidos, como johnnycakes, cakes de alforfón, journey cakes, flapjacks, hoe cakes y griddle cakes, y se hacían principalmente con trigo sarraceno o harina de maíz.",
+      noticiaSubtitle:
+        "Una receta deliciosa, con mucho sabor y muy esponjosa. ¡Deliciosa!",
+      noticiaDescription:
+        "Puedes disfrutar esta preparación en un desayuno o almuerzo ligero. Los pancakes se llamaban de diversas maneras antes del siglo XIX en Estados Unidos, como johnnycakes, cakes de alforfón, journey cakes, flapjacks, hoe cakes y griddle cakes, y se hacían principalmente con trigo sarraceno o harina de maíz.",
       Image: Noticias.noticia4,
       created_at: "09-10-2023",
-    }
+    },
   ];
 
   return (
@@ -153,14 +177,16 @@ export const Home = () => {
       <div className="content">
         <div className="seccion1" id="seccion1">
           <h1>Flexbox</h1>
-          <Slide noticias={noticias} handleOpen ={handleOpen} />
+          <Slide noticias={noticias} handleOpen={handleOpen} />
         </div>
         <div className="seccion2" id="seccion2">
           <h1>Services</h1>
+          <FavoriteList favoriteList={favoriteList}/>
           {/* <Service /> */}
         </div>
         <div className="seccion3" id="seccion3">
           <h1>Contacts</h1>
+          <ShoppingCartList shoppingList={shoppingCartList}/>
         </div>
         <div className="seccion4" id="seccion4">
           <h1>Products</h1>
@@ -268,6 +294,24 @@ export const Home = () => {
               <Typography variant="subtitle1" sx={{ mt: 2 }}>
                 {selectedNoticia.noticiaDescription}
               </Typography>
+              <div className="button-fab-favorite-cart">
+                <Fab
+                  className="button-fab"
+                  color="secondary"
+                  aria-label="Favorite icon"
+                  onClick={() => addToFavoriteList(selectedNoticia)}
+                >
+                  <FavoriteIcon />
+                </Fab>
+                <Fab
+                  className="button-fab"
+                  color="primary"
+                  aria-label="Favorite icon"
+                  onClick={() => addToShoppingCartList(selectedNoticia)}
+                >
+                  <AddShoppingCartIcon />
+                </Fab>
+              </div>
             </>
           )}
         </Box>
