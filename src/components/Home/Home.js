@@ -46,7 +46,7 @@ export const Home = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400, // Ajusta el ancho como desees
+    width: 400, 
     backgroundColor: "white",
     border: "2px solid #000",
     boxShadow: 24,
@@ -130,9 +130,9 @@ export const Home = () => {
   const noticias = [
     {
       noticiaId: "1",
-      noticiaTitle: "Conflicto Israel",
+      noticiaTitle: "Receta de torta de chocolate",
       noticiaSubtitle:
-        "El riesgo de que el conflicto entre Hamás e Israel desate una guerra regional",
+        "Una receta deliciosa, con mucho sabor y muy esponjosa. ¡Deliciosa!",
       noticiaDescription:
         "Hasta ahora, no hay señales de que Hezbolá lance una ofensiva propia, aunque ya han ocurrido enfrentamientos en la frontera entre Israel y el Líbano. En lo que respecta a Irán, su líder negó los rumores que relacionan a su país con el ataque de Hamás. Alrededor, los países árabes vecinos quieren mejorar sus relaciones con Israel y servir de mediadores en el conflicto.",
       Image: Noticias.noticia1,
@@ -164,7 +164,7 @@ export const Home = () => {
       noticiaSubtitle:
         "Una receta deliciosa, con mucho sabor y muy esponjosa. ¡Deliciosa!",
       noticiaDescription:
-        "Puedes disfrutar esta preparación en un desayuno o almuerzo ligero. Los pancakes se llamaban de diversas maneras antes del siglo XIX en Estados Unidos, como johnnycakes, cakes de alforfón, journey cakes, flapjacks, hoe cakes y griddle cakes, y se hacían principalmente con trigo sarraceno o harina de maíz.",
+        "Aprende a preparar una torta húmeda de chocolate decorada, suave, esponjosa, con mucho sabor y de manera sencilla para que puedas elaborarla en cualquier ocasión que se precie.",
       Image: Noticias.noticia4,
       created_at: "09-10-2023",
     },

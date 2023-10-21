@@ -11,11 +11,19 @@ import {
     Box,
     Fab
   } from "@mui/material";
+import './FavoriteList.scss';
 
 export const FavoriteList = ({ favoriteList }) => {
+  const unicoFavorites = favoriteList.reduce((unique, favorite) => {
+    if (!unique.some(item => item.noticiaId === favorite.noticiaId)) {
+      unique.push(favorite);
+    }
+    return unique;
+  }, []);
+
   return (
     <div className='div-favorite-container'>
-        {favoriteList.map((favorite) => {
+        {unicoFavorites.map((favorite) => {
           return (
             <Card key={favorite.noticiaId} sx={{ maxWidth: 345, background: "#fff" }} className="card">
               <CardActionArea>

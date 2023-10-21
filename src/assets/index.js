@@ -8,7 +8,7 @@ import service1 from "./images/services/reparaciones.jpg";
 import category4 from "./images/services/seguridad.jpg";
 import service5 from "./images/services/softemp.jpg";
 
-import noticia1 from "./images/noticias/conflicto.jpg";
+import noticia1 from "./images/noticias/torta.jpg";
 import noticia2 from "./images/noticias/amazonas.jpg";
 import noticia3 from "./images/noticias/karolg.jpg";
 import noticia4 from "./images/noticias/pancakes.jpg";
