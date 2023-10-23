@@ -23,37 +23,32 @@ export const FavoriteList = ({ favoriteList }) => {
 
   return (
     <div className='div-favorite-container'>
-        {unicoFavorites.map((favorite) => {
-          return (
-            <Card key={favorite.noticiaId} sx={{ maxWidth: 345, background: "#fff" }} className="card">
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={favorite.Image}
-                  alt={favorite.noticiaTitle}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {favorite.noticiaTitle}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {favorite.noticiaSubtitle}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              {/* <CardActions>
-                <Button
-                  size="small"
-                  color="primary"
-                  onClick={() => handleOpenServices(favorite.noticiaId)}
-                >
-                  MÁS INFO
-                </Button>
-              </CardActions> */}
-            </Card>
-          );
-        })}
+        {unicoFavorites.length > 0 ? ( // Verifica si hay elementos en la lista
+            unicoFavorites.map((favorite) => (
+                <Card key={favorite.noticiaId} sx={{ maxWidth: 345, background: "#0e6db0", margin: 3 }} className="card">
+                    <CardActionArea>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image={favorite.Image}
+                            alt={favorite.noticiaTitle}
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                {favorite.noticiaTitle}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                {favorite.noticiaSubtitle}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+            ))
+        ) : (
+            <Typography variant="body1" className="no-favorites-text">
+                Aún no hay favoritos
+            </Typography>
+        )}
     </div>
-  )
+);
 }

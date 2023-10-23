@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    z-index: 1;
 
     & .cube {
       width: 100px;
@@ -10,8 +11,8 @@
       transform-style: preserve-3d;
       animation: spin 8s infinite linear;
       position: fixed;
-      bottom: 100px;
-      right: 100px;
+      bottom: 50px;
+      right: 50px;
       & div {
         position: absolute;
         width: 100px;
@@ -59,7 +60,7 @@
       transform:rotateX(348deg) rotateZ(349deg) rotateY(341deg) scaleX(0.7) scaleY(0.7) scaleZ(0.7);
       position: fixed;
       bottom: 300px;
-      right: 100px;
+      right: 50px;
 
       & div {
         position: absolute;
@@ -111,7 +112,7 @@
       transform:rotateX(348deg) rotateZ(349deg) rotateY(341deg) scaleX(0.7) scaleY(0.7) scaleZ(0.7);
       position: fixed;
       bottom: 450px;
-      right: 100px;
+      right: 50px;
 
       & div {
         position: absolute;
@@ -165,7 +166,7 @@
       transform:rotateX(348deg) rotateZ(349deg) rotateY(341deg) scaleX(0.7) scaleY(0.7) scaleZ(0.7);
       position: fixed;
       bottom: 600px;
-      right: 100px;
+      right: 50px;
 
       & div {
         position: absolute;

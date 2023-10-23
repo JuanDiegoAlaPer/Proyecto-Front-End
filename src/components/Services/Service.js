@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-/* import service4 from "../../assets/images/services/appweb.jpg";
-import category3 from "../../assets/images/services/consulta.jpg";
-import service2 from "../../assets/images/services/hardupdate.jpg";
-import category1 from "../../assets/images/services/hardware.jpg";
-import category2 from "../../assets/images/services/programación.jpg";
-import service3 from "../../assets/images/services/redes.jpg";
-import service1 from "../../assets/images/services/reparaciones.jpg";
-import category4 from "../../assets/images/services/seguridad.jpg";
-import service5 from "../../assets/images/services/softemp.jpg"; */
+// import service4 from "../../assets/images/services/appweb.jpg";
+// import category3 from "../../assets/images/services/consulta.jpg";
+// import service2 from "../../assets/images/services/hardupdate.jpg";
+// import category1 from "../../assets/images/services/hardware.jpg";
+// import category2 from "../../assets/images/services/programación.jpg";
+// import service3 from "../../assets/images/services/redes.jpg";
+// import service1 from "../../assets/images/services/reparaciones.jpg";
+// import category4 from "../../assets/images/services/seguridad.jpg";
+// import service5 from "../../assets/images/services/softemp.jpg";
 
 import { ServicesList } from "../ServicesList/ServicesList";
 
