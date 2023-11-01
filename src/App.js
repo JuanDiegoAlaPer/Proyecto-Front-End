@@ -14,6 +14,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { TranslucentMenu } from "./components/TranslucentMenu/TranslucentMenu";
 import ServicesList from "./components/ServicesList/ServicesList";
+import { PrivacyPolicies } from "./components/PrivacyPolicies/PrivacyPolicies";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/flex" element={<Flex />} />
         <Route path="/translucent" element={<TranslucentMenu />} ></Route>
+        <Route path="/policies" element={<PrivacyPolicies />} ></Route>
       </Routes>
     </Router>
     </div>

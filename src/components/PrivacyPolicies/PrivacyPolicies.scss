@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #b4dbf9;
+
+    .div{
+        width: 20%;
+        height: 100px;
+        position: static;
+        margin: 40px 0;
+        background-color: #0e6db0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: #b4dbf9;
+    }
+
+    .button-style{
+        color: #b4dbf9;
+    }
+}
