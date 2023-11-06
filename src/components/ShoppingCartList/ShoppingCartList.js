@@ -1,5 +1,6 @@
 import React from "react";
 import { Fab } from "@mui/material";
+import { pink } from '@mui/material/colors';
 import "./ShoppingCartList.scss";
 import Checkbox from "@mui/material/Checkbox";
 
@@ -41,7 +42,13 @@ export const ShoppingCartList = ({ shoppingList }) => {
             <div className="text-content-grid-box">
               <p>Cantidad: {itemCounts[item.noticiaId]}</p>
               <Fab>
-                <Checkbox defaultChecked />
+                <Checkbox
+                  defaultChecked
+                  sx={{
+                    backgroundColor: 'transparent',
+                  }}
+                  icon={<span style={{ backgroundColor: 'transparent' }} />}
+                />
               </Fab>
             </div>
           </div>

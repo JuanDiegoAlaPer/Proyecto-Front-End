@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import "./PrivacyPolicies.scss";
+import { ArrowBack } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export const PrivacyPolicies = () => {
   const policy1 = `<h2>Interpretación y Definiciones</h2>
@@ -208,77 +211,85 @@ export const PrivacyPolicies = () => {
   };
 
   return (
-    <div>
-      <div className="header">
-        <div className="div">
-          <Button
-            className="button-style"
-            onClick={() => changePolicy(policy1)}
-          >
-            INTERPRETACIONES Y DEFINICIONES
-          </Button>
+    <div className="privacy-content">
+      <div className="privacy-card">
+        <div className="arrow-back">
+          <Link to="/" >
+            <ArrowBack />
+          </Link>
         </div>
-        <div className="div">
-          <Button
-            className="button-style"
-            onClick={() => changePolicy(policy2)}
-          >
-            RECOPILACION Y USO DE SUS DATOS PERSONALES
-          </Button>
-        </div>
-        <div className="div">
-          <Button
-            className="button-style"
-            onClick={() => changePolicy(policy5)}
-          >
-            AVISOS LEGALES
-          </Button>
-        </div>
-        <div className="div">
-          <Button
-            className="button-style"
-            onClick={() => changePolicy(policy3)}
-          >
-            ENLACES A OTROS SITIOS WEB
-          </Button>
-        </div>
-        <div className="div">
-          <Button
-            className="button-style"
-            onClick={() => changePolicy(policy4)}
-          >
-            CAMBIOS EN LAS POLÍTICAS DE PRIVACIDAD
-          </Button>
-        </div>
-      </div>
-      <div className="content">
-        {currentPolicy == null ? (
-          <div>
-            <h1>Política de Privacidad</h1>
-            <p>Última actualización: 01 de noviembre de 2023</p>
-            <p>
-              Esta Política de Privacidad describe Nuestras políticas y
-              procedimientos sobre la recopilación, el uso y la divulgación de
-              Su información cuando utiliza el Servicio y le informa sobre Sus
-              derechos de privacidad y cómo la ley lo protege.
-            </p>
-            <p>
-              Utilizamos sus datos personales para proporcionar y mejorar el
-              Servicio. Al utilizar el Servicio, usted acepta la recopilación y
-              el uso de información de acuerdo con esta Política de Privacidad.
-              Esta Política de Privacidad se ha creado con la ayuda del{" "}
-              <a
-                href="https://www.privacypolicies.com/privacy-policy-generator/"
-                target="_blank"
-              >
-                Generador de Políticas de Privacidad
-              </a>
-              .
-            </p>
+        <div className="header">
+          <div className="div">
+            <Button
+              className="button-style"
+              onClick={() => changePolicy(policy1)}
+            >
+              INTERPRETACIONES Y DEFINICIONES
+            </Button>
           </div>
-        ) : (
-          <div dangerouslySetInnerHTML={{ __html: currentPolicy }}></div>
-        )}
+          <div className="div">
+            <Button
+              className="button-style"
+              onClick={() => changePolicy(policy2)}
+            >
+              RECOPILACION Y USO DE SUS DATOS PERSONALES
+            </Button>
+          </div>
+          <div className="div">
+            <Button
+              className="button-style"
+              onClick={() => changePolicy(policy5)}
+            >
+              AVISOS LEGALES
+            </Button>
+          </div>
+          <div className="div">
+            <Button
+              className="button-style"
+              onClick={() => changePolicy(policy3)}
+            >
+              ENLACES A OTROS SITIOS WEB
+            </Button>
+          </div>
+          <div className="div">
+            <Button
+              className="button-style"
+              onClick={() => changePolicy(policy4)}
+            >
+              CAMBIOS EN LAS POLÍTICAS DE PRIVACIDAD
+            </Button>
+          </div>
+        </div>
+        <div className="content">
+          {currentPolicy == null ? (
+            <div>
+              <h1>Política de Privacidad</h1>
+              <p>Última actualización: 01 de noviembre de 2023</p>
+              <p>
+                Esta Política de Privacidad describe Nuestras políticas y
+                procedimientos sobre la recopilación, el uso y la divulgación de
+                Su información cuando utiliza el Servicio y le informa sobre Sus
+                derechos de privacidad y cómo la ley lo protege.
+              </p>
+              <p>
+                Utilizamos sus datos personales para proporcionar y mejorar el
+                Servicio. Al utilizar el Servicio, usted acepta la recopilación
+                y el uso de información de acuerdo con esta Política de
+                Privacidad. Esta Política de Privacidad se ha creado con la
+                ayuda del{" "}
+                <a
+                  href="https://www.privacypolicies.com/privacy-policy-generator/"
+                  target="_blank"
+                >
+                  Generador de Políticas de Privacidad
+                </a>
+                .
+              </p>
+            </div>
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: currentPolicy }}></div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import ServicesList from "../ServicesList/ServicesList";
 import Flex from "../Flex/Flex";
 import Contact from "../Contacts/Contact";
 import Products from "../Products/Products";
+import Footer from "../Footer/Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Card,
@@ -305,6 +306,7 @@ export const Home = () => {
           )}
         </Box>
       </Modal>
+      <Footer></Footer>
     </div>
   );
 };

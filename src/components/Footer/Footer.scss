@@ -1,0 +1,52 @@
+.Footer {
+  background: #666;
+  color: #000000;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 100px;
+
+  .grid1-style,
+  .grid2-style,
+  .grid3-style {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    & .svg-icon {
+      width: auto;
+      height: 40px;
+      margin: 10px;
+    }
+
+    & .location-link {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          color: white;
+        }
+    }
+    
+    & .grid2-title {
+      text-align: start;
+      justify-content: start;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
