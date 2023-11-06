@@ -7,6 +7,7 @@ import Flex from "./components/Flex/Flex";
 import Contact from "./components/Contacts/Contact";
 import Home from "./components/Home/Home";
 import Products from "./components/Products/Products";
+import Login from "./components/Login/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Slider from "react-slick";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/flex" element={<Flex />} />
         <Route path="/translucent" element={<TranslucentMenu />} ></Route>
         <Route path="/policies" element={<PrivacyPolicies />} ></Route>
+        <Route path="/login" element={<Login />} ></Route>
       </Routes>
     </Router>
     </div>

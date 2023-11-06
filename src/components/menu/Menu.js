@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import './Menu.scss';
 import logo from '../../assets/images/logo.png';
 import avatar from '../../assets/images/avatar-1295394_960_720.webp';
-
+import { useNavigate } from "react-router-dom"; 
 
 function Menu() {
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
+  };
+
+  const handleLoginClick = () => {
+    navigate("/login");
   };
 
   return (
@@ -28,7 +33,7 @@ function Menu() {
             <li><a href="#seccion3">Contacts</a></li>
             <li><a href="#seccion4">Products</a></li>
             <li><a href="#seccion5">Seccion 5</a></li>
-            <li><a href="#seccion5">Login</a></li>
+            <li onClick={handleLoginClick}><a href="#">Login</a></li>  
           </ul>
         </div>
         <div className="avatar-container">
